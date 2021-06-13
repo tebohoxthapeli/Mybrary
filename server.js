@@ -22,7 +22,7 @@ app.set('layout', 'layouts/layout')
 
 app.use(methodOverride('_method'))
 app.use(expressLayouts)
-app.use(express.static('public'))
+app.use(express.static('./public'))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
 //app.use(express.json())
 //app.use(express.urlencoded({ extended: false }));
