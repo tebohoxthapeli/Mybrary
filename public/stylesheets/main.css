@@ -3,6 +3,7 @@
 @import 'shared/variables.css';
 @import 'shared/header.css';
 @import 'shared/buttons.css';
+@import 'shared/form.css';
 
 
 *,
@@ -19,7 +20,7 @@ body {
     font-family: 'Nanum Myeongjo', serif;
     font-size: 2rem;
     background: linear-gradient(to right, var(--color-background-dark), var(--color-background-light));
-    color: var(--color-text-light);
+    color: white;
 }
 
 .container {
@@ -34,5 +35,5 @@ body {
 
 .page-header {
     font-size: 4rem;
-    font-weight: 500;
+    font-weight: 600;
 }
