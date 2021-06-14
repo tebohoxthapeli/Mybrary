@@ -36,6 +36,9 @@
     font-weight: var(--nav-link-font-weight);
 }
 
-.header-nav li a:hover, .header-title:hover {
+.header-nav li a:hover,
+.header-nav li a:focus,
+.header-title:hover,
+.header-title:focus {
     color: rgb(180, 179, 255);
 }
