@@ -4,6 +4,8 @@
 @import 'shared/header.css';
 @import 'shared/buttons.css';
 @import 'shared/form.css';
+@import 'shared/author.css';
+@import 'shared/books.css';
 
 
 *,
@@ -36,4 +38,10 @@ body {
 .page-header {
     font-size: 4rem;
     font-weight: 600;
+}
+
+.error-message {
+    text-align: center;
+    font-weight: 700;
+    color: var(--color-text-header-title);
 }

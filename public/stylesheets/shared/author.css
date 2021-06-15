@@ -1,0 +1,13 @@
+.author-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid gray;
+    padding-bottom: 2rem;
+}
+
+.author-name {
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
