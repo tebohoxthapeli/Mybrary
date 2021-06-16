@@ -57,19 +57,19 @@ router.post('/', async (req, res) => {
     }
 })
 
-// show book route:
+// show specific book:
 
 router.get('/:id', async (req, res) => {
     try {
         const book = await Book.findById(req.params.id).populate('author').exec()
-        res.render('books/show', { book: book })
+        res.render('books/show', { book })
     }
     catch {
         res.redirect('/')
     }
 })
 
-// edit book route:
+// get edit book page:
 
 router.get('/:id/edit', async (req, res) => {
     try {
@@ -124,7 +124,7 @@ router.delete('/:id', async (req, res) => {
     catch {
         if (book != null) {
             res.render('books/show', {
-                book: book,
+                book,
                 errorMessage: 'Could not remove book'
             })
         }
@@ -144,18 +144,15 @@ async function renderEditPage(res, book, hasError = false) {
 
 async function renderFormPage(res, book, form, hasError = false) {
     try {
-        const authors = await Author.find({})
-        const params = {
-            authors: authors,
-            book: book
-        }
+        const authors = await Author.find({}) // find all authors
+        const params = { authors, book }
 
         if (hasError) {
             if (form === 'edit') {
-                params.errorMessage = 'Error updating book'
+                params.errorMessage = 'ERROR UPDATING BOOK'
             }
             else {
-                params.errorMessage = 'Error creating book'
+                params.errorMessage = 'ERROR CREATING BOOK'
             }
         } 
         res.render(`books/${form}`, params)

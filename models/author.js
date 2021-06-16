@@ -10,14 +10,14 @@ const authorSchema = new mongoose.Schema({
 
 authorSchema.pre('remove', function(next) {
     Book.find({ author: this.id }, (err, books) => {
-        if (err) { //if mongoose couldn't connect for example
+        if (err) { // if mongoose couldn't connect for example
             next(err) // won't remove author
         }
         else if (books.length > 0) {
             next(new Error('This author still has books.'))
         }
         else {
-            next()
+            next() // will remove author
         }
     })
 })

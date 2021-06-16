@@ -88,11 +88,13 @@ router.put('/:id', async (req, res) => {
         else {
             res.render('authors/edit', {
                 author: author,
-                errorMessage: 'Error updating author'
+                errorMessage: 'ERROR UPDATING AUTHOR'
             })
         }
     }
 })
+
+// delete an author
 
 router.delete('/:id', async (req, res) => {
     let author
